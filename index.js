@@ -19,8 +19,9 @@ app.get('/price', async (req, res) => {
     // Extract the latest price
     const price = priceElement.text();
 
-    // Return the price
-    res.json({ price });
+    // Send the price as the response
+    res.send(`The latest price is: ${price}`);
+    
   } catch (error) {
     // Handle any errors
     console.error(error);
