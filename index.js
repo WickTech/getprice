@@ -28,11 +28,6 @@ app.get('/price', async (req, res) => {
   }
 });
 
-app.use((req, res) => {
-  // Handle invalid routes
-  res.status(404).json({ error: 'Invalid route.' });
-});
-
 app.listen(9000, () => {
   console.log(`Server is running on port 9000`);
 });
