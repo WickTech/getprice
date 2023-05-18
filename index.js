@@ -18,9 +18,12 @@ app.get('/', async (req, res) => {
 
     // Extract the latest price
     const price = priceElement.text();
-
+    
+    // Get the current date
+    const currentDate = new Date().toLocaleDateString();
+    
     // Return the price
-    res.json({ price });
+    res.json({ currentDate ,price });
 
   } catch (error) {
     // Handle any errors
