@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 
 const app = express();
 
-app.get('/price', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     // Scrape the website
     const response = await axios.get('https://www.metal.com/Lithium-ion-Battery/202303240001');
@@ -19,9 +19,9 @@ app.get('/price', async (req, res) => {
     // Extract the latest price
     const price = priceElement.text();
 
-    // Send the price as the response
-    res.send(`The latest price is: ${price}`);
-    
+    // Return the price
+    res.json({ price });
+
   } catch (error) {
     // Handle any errors
     console.error(error);
